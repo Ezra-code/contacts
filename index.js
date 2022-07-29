@@ -4,6 +4,9 @@ const contactData = require('./contacts.json')
 
 const port = process.env.PORT || 3000
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*")
+})
 app.get('/', (req, res) => {
     res.send("These are your contacts")
 })
